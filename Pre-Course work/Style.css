@@ -1,0 +1,66 @@
+body {
+  background-color: aliceblue;
+  font-family: "Arial", sans-serif; /* Font family for the entire document */
+  margin: 0;
+}
+
+/* Navbar styling */
+header nav {
+  display: flex;
+  justify-content: center; /* Center the navbar horizontally */
+}
+
+header nav a {
+  margin: 0 10px; /* Add spacing between navbar links */
+}
+
+.container img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto; /* Center the image horizontally within its container */
+  border-radius: 50%; /* Make the image a perfect circle */
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  font-size: 2em; /* Adjust font size */
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+}
+
+p {
+  color: black;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+/* Contact section */
+#contact {
+  text-align: center; /* Center the text in the contact section */
+}
+
+#contact a {
+  margin: 0 10px; /* Add spacing between contact links */
+}
+
+a {
+  text-decoration: none; /* Remove underlines from links */
+  color: #0066cc; /* Change link color */
+}
+
+a:hover {
+  color: #70b8ff; /* Change link color on hover */
+}

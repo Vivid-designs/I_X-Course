@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Grid with Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px); /* Adjust columns as needed */
+            gap: 10px; /* Adjust gap between grid items */
+            margin-bottom: 20px; /* Add margin for spacing */
+        }
+
+        .grid-item {
+            height: 100px; /* Adjust height of grid items */
+            background-color: #ccc; /* Default background color */
+        }
+
+        .item1 { background-color: #ff6347; }
+        .item2 { background-color: #ffa500; }
+        .item3 { background-color: #ffd700; }
+        .item4 { background-color: #90ee90; }
+        .item5 { background-color: #4682b4; }
+        .item6 { background-color: #9370db; }
+        .item7 { background-color: #ff69b4; }
+        .item8 { background-color: #d3d3d3; }
+        .item9 { background-color: #00ced1; }
+        .item10 { background-color: #ffa07a; }
+
+        .bootstrap-grid-item-1 { background-color: #b0e0e6; } /* Light blue */
+        .bootstrap-grid-item-2 { background-color: #f08080; } /* Light coral */
+        .bootstrap-grid-item-3 { background-color: #98fb98; } /* Pale green */
+
+        /* Custom Color Grid */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Equal width columns */
+            gap: 10px;
+            border: 5px solid rgb(80, 80, 80);
+            margin-bottom: 20px;
+        }
+
+        .color-grid-item {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid rgb(80, 80, 80);
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <!-- Your existing CSS Grid -->
+        <div class="grid-container">
+            <div class="grid-item item1"></div>
+            <div class="grid-item item2"></div>
+            <div class="grid-item item3"></div>
+            <div class="grid-item item4"></div>
+            <div class="grid-item item5"></div>
+            <div class="grid-item item6"></div>
+            <div class="grid-item item7"></div>
+            <div class="grid-item item8"></div>
+            <div class="grid-item item9"></div>
+            <div class="grid-item item10"></div>
+        </div>
+
+        <!-- Bootstrap Grids with different colors -->
+        <div class="row">
+            <div class="col">
+                <div class="bootstrap-grid-item bootstrap-grid-item-1">
+                    1 of 2
+                </div>
+            </div>
+            <div class="col">
+                <div class="bootstrap-grid-item bootstrap-grid-item-2">
+                    2 of 2
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="bootstrap-grid-item bootstrap-grid-item-3">
+                    1 of 3
+                </div>
+            </div>
+            <div class="col">
+                <div class="bootstrap-grid-item bootstrap-grid-item-1">
+                    2 of 3
+                </div>
+            </div>
+            <div class="col">
+                <div class="bootstrap-grid-item bootstrap-grid-item-2">
+                    3 of 3
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

@@ -6,17 +6,19 @@ let lastName = "Spence";
 const fullName = firstName + " " + lastName;
 
 let greetings = "AWE! my naam is: " + fullName;
+console.log(greetings);
 
 // 2. Data Types and Values
 let nil; // Declaring a variable without assigning a value
 let nill = null; // Assigning null explicitly
 let bigInt = 2 ** 53; // Calculating 2 to the power of 53
 
-console.log("typeof 'hello world'", typeof "helloworld"); // Checking the type of a string
+console.log("typeof 'hello world'", typeof "hello world"); // Checking the type of a string
 console.log("typeof 31,", typeof 31); // Checking the type of a number
 
 // 3. Template Literal
 let groete = `hello my name is ${fullName}`; // Using template literals
+console.log(groete);
 
 // 4. Objects
 const person = {
@@ -26,23 +28,26 @@ const person = {
     address: {
         number: 5,
         street: "Rippen Avenue",
-        Province: "Gautend",
+        Province: "Gauteng",
         country: "South Africa"
     },
     getFormattedAddress: function () {
         return `${this.address.number} ${this.address.street}, ${this.address.Province}, ${this.address.country}`;
     }
 };
+console.log(person.getFormattedAddress());
 
 // 5. Arrays
 let fruits = ["Orange", "pear", "apple"];
 fruits.push("banana"); // Adding an item to the end of the array
 const firstFruit = fruits.shift(); // Removing the first item from the array
+console.log(firstFruit);
 
 // 6. Higher-Order Array Methods
 const filteredFruits = fruits.filter((fruit) => {
     return fruit.length > 5 && !fruits.includes("Orange");
 });
+console.log(filteredFruits);
 
 const mappedFruits = fruits.map((fruit, index) => {
     return {
@@ -52,12 +57,14 @@ const mappedFruits = fruits.map((fruit, index) => {
         price: "R 10",
     };
 });
+console.log(mappedFruits);
 
 const sortedFruits = fruits.sort((a, b) => {
     if (a > b) return 1;
     if (a < b) return -1;
     return 0;
 });
+console.log(sortedFruits);
 
 // 7. Conditional Statements
 const number = 15;
@@ -90,68 +97,79 @@ let isConditionSatisfied = false;
 while (index < fruits.length) {
     console.log(fruits[index]);
     index++;
-};
+}
 
-
-
-//Functions
+// Functions
 let todos = [
     {
-        id:1,
-        title:"learn html, css and js ",
+        id: 1,
+        title: "learn html, css and js",
         completed: true,
-    }
+    },
     {
-        id:2,
-        title:"Write code",
+        id: 2,
+        title: "Write code",
         completed: false,
     },
 ];
 
-function uncompletedTask (todos) {
-    return todos.filter((todo) => !todo.completed)
+function uncompletedTask(todos) {
+    return todos.filter((todo) => !todo.completed);
 }
 
-function isTaskDone (todos) {
-    return todos.completed
+function isTaskDone(todo) {
+    return todo.completed;
 }
 
 const getAllCompletedTask = (todos) => {
-    return todos.filter((todos))
+    return todos.filter(isTaskDone);
 };
 
+console.log(uncompletedTask(todos));
+console.log(getAllCompletedTask(todos));
 
-
-//constructor fucntions 
-
-function user (firstName, lastName, bio, email) {
+// Constructor Functions
+function User(firstName, lastName, bio, email) {
     this.firstName = firstName;
-    this.lastName  = lastName;
+    this.lastName = lastName;
     this.bio = bio;
     this.email = email;
 }
 
-user.prototype.getFulName = function () {
-    return `${this.firstName} ${this.lastName}`
+User.prototype.getFullName = function () {
+    return `${this.firstName} ${this.lastName}`;
 };
 
-const user = new user (
+const userInstance = new User(
     "Lario",
     "Spence",
     "I am a web developer",
     "lario@spence.com"
+);
 
-)
-console.log(user);
-console.log(user.getFulName());
+console.log(userInstance);
+console.log(userInstance.getFullName());
 
-//Classes
-const Person = class{
-    constructor (firstName, lastName, bio, email) {
+// Classes
+class Person {
+    constructor(firstName, lastName, bio, email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.bio = bio;
         this.email = email;
+    }
+    
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
 }
-}
-const personClas
+
+const personInstance = new Person(
+    "Lario",
+    "Spence",
+    "I am a web developer",
+    "lario@spence.com"
+);
+
+console.log(personInstance);
+console.log(personInstance.getFullName());

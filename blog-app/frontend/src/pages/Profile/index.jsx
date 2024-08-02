@@ -10,7 +10,7 @@ import DeleteBlogModal from "../../components/DeleteBlogModal";
 import SuccessToast from "../../components/SuccessToast";
 import ErrorToast from "../../components/ErrorToast";
 
-import blogsService from '../../services/blogsService'; // Corrected import path
+import blogService from "../../services/blogsService";
 
 export default function ProfilePage() {
   const { authorId } = useParams();
@@ -32,7 +32,7 @@ export default function ProfilePage() {
     const fetchAuthorBlogs = async () => {
       try {
         setIsLoading(true);
-        const blogs = await blogsService.getBlogsByAuthorId(authorId);
+        const blogs = await blogService.getBlogsByAuthorId(authorId);
         setBlogs(blogs.data);
         setIsLoading(false);
       } catch (error) {

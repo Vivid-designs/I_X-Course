@@ -2,10 +2,7 @@ import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogs, reset as resetBlog } from "../../features/blogsSlice";
-import {
-  fetchCategories,
-  reset as resetCategory,
-} from "../../features/categoriesSlice";
+import { fetchCategories, reset as resetCategory } from "../../features/categoriesSlice";
 
 import "../../App.css";
 
@@ -23,19 +20,22 @@ import categoryService from "../../services/CategoryService";
 export default function HomePage() {
   const dispatch = useDispatch();
 
+  const blogsState = useSelector((state) => state.blogs) || {};
+  const categoriesState = useSelector((state) => state.categories) || {};
+
   const {
     isError: isBlogsError,
     isSuccess: isBlogsSuccess,
     isLoading: isLoadingBlogs,
     message: blogsMessage,
-  } = useSelector((state) => state.blogs);
+  } = blogsState;
 
   const {
     isError: isCategoriesError,
     isSuccess: isCategoriesSuccess,
     isLoading: isLoadingCategories,
     message: categoriesMessage,
-  } = useSelector((state) => state.categories);
+  } = categoriesState;
 
   useEffect(() => {
     dispatch(fetchCategories());

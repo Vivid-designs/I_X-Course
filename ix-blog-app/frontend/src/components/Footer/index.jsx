@@ -22,7 +22,7 @@ export default function Footer() {
             </Link>
           </li>
         </ul>
-        <p className="text-center text-muted">&copy; 2024 The Blog App, Inc</p>
+        <p className="text-center text-muted">&copy; 2022 Vivid Graphics</p>
       </footer>
     </div>
   );
